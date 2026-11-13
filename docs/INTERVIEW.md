@@ -62,16 +62,20 @@ From the user's 2026-11-13 answers. Their words where possible. Not yet agreed a
 - **Steps pane:** somewhere, one simple pane showing the project broken into steps with
   progress on them, and maybe which steps are parallel and which are not. The user liked the
   idea of a kanban, but it became too complex and took too much space. Simplest solution wins.
+  An AI breaks the project into phases; the user does not write them. The pane shows the
+  phases, which of them run in parallel, and how far along each one is.
+- **Repository placement, to be shown both ways:** the user wants to see two versions of the
+  layout and choose. In one the repository is one of the things the output center shows. In
+  the other it is a separate column that is always on screen. The user's lean: separate "would
+  be cool but could be too much clutter".
 
 ## Open questions
 
-- Whether the repository view is one of the things the output center shows, next to
-  artifacts and docs, or a separate column that is always on screen as well. Inference, not
-  confirmed: it is one of the things the output center shows.
+- Which of the two repository placements the user picks, once they have seen both designed.
 - How the user moves between outputs in the output center, and how many there are at once.
 - How five areas (agent cards, chat, output center, repository, steps) fit on one screen
   without it becoming crowded, which the user dislikes.
-- Where the steps come from, and what a step's progress looks like.
+- How progress on a phase is measured and shown: a count of steps done, a bar, or a state.
 - Whether a terminal agent (Warp) looks the same as a chat agent or different.
 - What an agent's card shows besides its name, for example whether it is working or idle.
 - Device and screen size.
@@ -92,3 +96,5 @@ Add each exchange as it happens, newest last.
 | 2026-11-13 | Is it four agents or five? | "Kimi as well." Five: Fable 5.2, Warp, Deep Seek, GLM, Kimi. |
 | 2026-11-13 | When you click into a folder in the git column, what do you want to see about the agents? | "The main thing is just see the repo in my dashboard without leaving to check git, so I can just watch commits and merges live. Visibility into who did what is nice but it's actually secondary. I really just want to read the code in my same dashboard." |
 | 2026-11-13 | None. The user added this unprompted. | "One thing that is easy about Claude Code is that agents can interact with artifacts, so I can tell different sessions to interact with the same artifact. I like that I can open it beside a chat and feel like I'm chatting about an artifact. What annoys me is that when I go to a different chat I have to reopen it. It would be cool if I could sort of see agents outputting things and they can collaborate on one output center (not just the git, like artifacts or a doc or something), but it stays fixed so that I basically can see agents interacting and changing it while I toggle through them. It's like the whole team is working on the output area, but I choose which team member I want to be clicked in, and I can switch without the output closing." |
+| 2026-11-13 | Is the repository one of the things the output center shows, or a separate column that is always on screen? | "Let's see both ideas in a UI. Separate would be cool but could be too much clutter." |
+| 2026-11-13 | For the steps pane, where do the steps come from and what do you want to see at a glance? | "Probably have an AI break it into phases. We want to see the phases and then which would run in parallel and how far they are." |
