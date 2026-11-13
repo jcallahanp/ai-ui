@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
+
+:root {
+  --bg: #050506;
+  --pane: #0b0b0e;
+  --raised: #121216;
+  --line: #1d1d23;
+  --text: #e9e9ee;
+  --text-2: #9a9aa5;
+  --text-3: #6b6b76;
+  --accent: #8b5cf6;
+  --accent-soft: rgba(139, 92, 246, 0.14);
+  --glow: 0 0 22px rgba(139, 92, 246, 0.28);
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --fs-s: 12px;
+  --fs-m: 13px;
+  --fs-l: 15px;
+  --gap: 8px;
+  --pad: 16px;
+  --radius: 12px;
+  --radius-s: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: var(--fs-m);
+  overflow: hidden;
+}
