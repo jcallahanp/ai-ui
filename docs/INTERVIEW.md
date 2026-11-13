@@ -33,4 +33,4 @@ Add each exchange as it happens, newest last.
 
 | Date | Question | Answer |
 |---|---|---|
-| | | |
+| 2026-11-13 | None. The user said this while sharing their Pinterest board. | Simple boards that are dark and have columns with tasks are more applicable to this project than the other pins. Inference, not confirmed: the UI centers on a board of columns that hold tasks. |
