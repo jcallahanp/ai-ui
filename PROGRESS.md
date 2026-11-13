@@ -50,4 +50,4 @@ Step statuses: `todo`, `doing`, `to verify`, `done`, `failed`.
 | S12 Idea 1, branch chips | done | pass, 2026-11-13 |  |
 | S13 Idea 2, branch switcher in the tab row | done | pass, 2026-11-13 |  |
 | S14 Idea 3, branches as the live list | done | pass, 2026-11-13 |  |
-| S15 Red theme | doing |  |  |
+| S15 Red theme | to verify |  |  |
