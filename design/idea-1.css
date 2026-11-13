@@ -1,0 +1,93 @@
+/* Idea 1: branch chips above the tree and code, commits across the bottom. */
+
+.r1 {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Row 1: branch chips */
+
+.r1-branches {
+  flex: none;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 4px;
+  padding: var(--gap);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.r1-chip {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px 10px;
+  border-radius: var(--radius-s);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.r1-chip-name {
+  font-family: var(--mono);
+  font-size: var(--fs-s);
+  color: var(--text-2);
+}
+
+.r1-chip-agent {
+  font-size: var(--fs-s);
+  color: var(--text-3);
+}
+
+.r1-chip.is-chosen {
+  background: var(--raised);
+}
+
+.r1-chip.is-chosen .r1-chip-name {
+  color: var(--text);
+}
+
+/* Row 2: file tree and code */
+
+.r1-main {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+}
+
+.r1 .repo-tree {
+  flex: none;
+  width: 190px;
+  border-right: 1px solid var(--line);
+}
+
+.r1 .repo-code {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Row 3: commits */
+
+.r1 .repo-commits {
+  flex: none;
+  height: 170px;
+  gap: 8px;
+  border-top: 1px solid var(--line);
+}
+
+.r1 .repo-commit {
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--pad);
+}
+
+.r1 .repo-commit-msg {
+  min-width: 0;
+}
+
+.r1 .repo-commit-meta {
+  flex: none;
+}

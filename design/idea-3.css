@@ -1,0 +1,98 @@
+/* Idea 3: the repository with branches as the live list. */
+
+.r3 {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) auto;
+}
+
+/* Row 1: file tree and code. Overrides repo.css grid positions. */
+
+.r3 .repo-tree {
+  grid-column: 1;
+  grid-row: 1;
+  border-right: 1px solid var(--line);
+}
+
+.r3 .repo-code {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+  min-height: 0;
+}
+
+/* Row 2: branches across the full width. */
+
+.r3-branches {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px var(--gap) var(--gap);
+  border-top: 1px solid var(--line);
+}
+
+.r3-label {
+  margin: 0 0 6px;
+  padding: 0 var(--gap);
+  font-size: var(--fs-s);
+  color: var(--text-3);
+}
+
+.r3-row {
+  display: grid;
+  grid-template-columns: 8px 128px 72px minmax(0, 1fr) 56px;
+  align-items: center;
+  column-gap: 12px;
+  padding: 6px var(--gap);
+  border-radius: var(--radius-s);
+  color: var(--text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.r3-row.is-chosen {
+  background: var(--raised);
+}
+
+.r3-nodot {
+  width: 8px;
+  height: 8px;
+}
+
+.r3-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: var(--mono);
+  font-size: var(--fs-s);
+  color: var(--text);
+}
+
+.r3-agent {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: var(--fs-s);
+  color: var(--text-2);
+}
+
+.r3-msg {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: var(--fs-m);
+  color: var(--text);
+}
+
+.r3-merge {
+  margin-right: 6px;
+  font-size: var(--fs-s);
+  color: var(--text-3);
+}
+
+.r3-time {
+  text-align: right;
+  font-size: var(--fs-s);
+  color: var(--text-3);
+}

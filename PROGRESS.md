@@ -48,6 +48,6 @@ Step statuses: `todo`, `doing`, `to verify`, `done`, `failed`.
 | S10 Large monitor | done | pass, 2026-11-13 |  |
 | S11 Agents on the left, with the team label | done | pass, 2026-11-13 |  |
 | S12 Idea 1, branch chips | to verify |  |  |
-| S13 Idea 2, branch switcher in the tab row | to verify |  |  |
-| S14 Idea 3, branches as the live list | to verify |  |  |
+| S13 Idea 2, branch switcher in the tab row | done | pass, 2026-11-13 |  |
+| S14 Idea 3, branches as the live list | done | pass, 2026-11-13 |  |
 | S15 Red theme | todo | | |
