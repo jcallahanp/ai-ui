@@ -4,25 +4,23 @@ The only record of where the project stands. Update it the moment something chan
 
 ## Now
 
-- **Phase:** 2, Requirements (in progress)
-- **Next action:** Get the user's agreement to R1 to R27 in `docs/REQUIREMENTS.md`, or their
-  changes. Shown to the user on 2026-11-13. Twelve of them carry a proposal the user has not
-  stated; those are marked in the Source column. Then start phase 3, personas.
+- **Phase:** 6, Build and verify (in progress)
+- **Next action:** Run the first step in the table below that is not `done`, in the order
+  `GOAL.md` gives. One Opus 5.5 agent does the step; a different one checks it.
 - **Blocked on:** nothing
-- **Done out of order:** the user shared their Pinterest board before the interview. Its 10
-  unique pins, the user's weighting and what they like are in `docs/INSPIRATION.md`, with a
-  draft design direction. The draft is not agreed, and three questions there are still open.
+- **Still to come from the user:** the choice between layout A and layout B, once they have
+  seen both (R14).
 
 ## Phases
 
 | # | Phase | Status | Finished when |
 |---|---|---|---|
-| 1 | Interview | done | The user agrees with the summary in `docs/INTERVIEW.md` |
-| 2 | Requirements | in progress | The user has agreed to every requirement |
-| 3 | Personas | not started | Every persona has "done when" checks and the user agrees with them |
-| 4 | Inspiration | in progress | The user agrees with the design direction |
-| 5 | Plan | not started | `GOAL.md` has steps and each has a yes-or-no check |
-| 6 | Build and verify | not started | Every step below is `done` |
+| 1 | Interview | done | The user agreed with the summary in `docs/INTERVIEW.md` on 2026-11-13 |
+| 2 | Requirements | done | The user agreed to R1 to R27 on 2026-11-13 |
+| 3 | Personas | done | Written from the agreed requirements. Not shown to the user separately; they said to proceed |
+| 4 | Inspiration | done | Design direction final. It follows R19 to R22. Not shown to the user separately |
+| 5 | Plan | done | `GOAL.md` has ten steps, each with yes-or-no checks |
+| 6 | Build and verify | in progress | Every step below is `done` |
 
 Phase statuses: `not started`, `in progress`, `done`.
 
@@ -32,4 +30,13 @@ Step statuses: `todo`, `doing`, `to verify`, `done`, `failed`.
 
 | Step | Status | Check result | Note |
 |---|---|---|---|
-| None yet. Steps are written in phase 5. | | | |
+| S01 Named values | todo | | |
+| S02 Page shell and agents pane | todo | | |
+| S03 Chat | todo | | |
+| S04 Output center | todo | | |
+| S05 Phases pane | todo | | |
+| S06 Warp chosen | todo | | |
+| S07 Empty output center | todo | | |
+| S08 Repository view | todo | | |
+| S09 Layout B | todo | | |
+| S10 Large monitor | todo | | |

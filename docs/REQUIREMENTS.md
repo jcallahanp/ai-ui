@@ -1,6 +1,6 @@
 # Requirements
 
-**Status:** written 2026-11-13 from the agreed interview summary. Waiting for the user to agree.
+**Status:** agreed by the user on 2026-11-13, proposals included.
 
 A requirement says what a person must be able to see or do in the UI. Each one traces back to
 something the user said in `docs/INTERVIEW.md`. Nothing is built from a requirement the user
@@ -85,7 +85,8 @@ and the user should change it if it is wrong.
 
 ## Agreement
 
-**Agreed by the user:** no
+**Agreed by the user:** yes, 2026-11-13. "Agreed proceed." This covers R1 to R27, the twelve
+proposals among them, and the out-of-scope list.
 
 ## Changes after agreement
 

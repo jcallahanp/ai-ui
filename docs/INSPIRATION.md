@@ -1,7 +1,7 @@
 # Inspiration
 
-**Status:** pins collected and the user's reasons recorded on 2026-11-13. A design direction is
-drafted below from their words. The user has not agreed to it yet.
+**Status:** done on 2026-11-13. The design direction at the end of this file is final for the
+build.
 
 ## Source
 
@@ -73,31 +73,57 @@ These are Claude's, from looking at the pins. The user has not agreed to any of 
 
 ## Questions for the user
 
-Answered on 2026-11-13 and recorded above: what the user likes, the duplicate pins, how dark,
-and what to carry over from the glow-and-glass pins.
-
-Still open:
-
-- Dense or sparse: how much each card or row shows.
-- Type: a plain sans as in pin 3, or monospace as in pin 10.
+All answered or settled on 2026-11-13. What the user likes, the duplicate pins, how dark, the
+glow and the accent color are recorded above. Type and density were settled by requirements
+R2, R21 and R22, which the user agreed to.
 
 ## Design direction
 
-A draft. Each line says whether it comes from the user or from Claude. Where pins disagree
-with each other, say which one wins and why.
+Final for the build. It follows requirements R19 to R22, which the user agreed to on
+2026-11-13. It was not put to the user separately; the user said to proceed. The mood, the
+dark surfaces and the subtle purple accent are the user's. The exact values are Claude's.
 
-- **Mood:** futuristic, minimalist, rogue. From the user.
-- **Color:** black or very dark surfaces, "mostly a dark theme". From the user. Accents "very
-  subtle", in purple or red. From the user. Proposed in `docs/REQUIREMENTS.md`: purple as the
-  one accent, because the pins lean purple and red reads as an error.
-- **Type:** not answered by the user. Proposed in `docs/REQUIREMENTS.md`: a plain sans for the
-  interface and monospace for code and the terminal.
-- **Layout and spacing:** simple panes with room around them: an agents pane on the right, a
-  git column and a steps pane. From the user's interview answer. The rest of the layout is open.
-- **Components:** agent cards that show little more than a name. From the user. A left sidebar
-  or rail appears in every pin, but the user has not asked for one.
-- **Motion:** open.
-- **Avoid:** over-engineered glow, crowded dashboards with many charts and panels, and the
-  multi-column kanban structure. From the user.
+- **Mood:** futuristic, minimalist, rogue. Quiet and black, with one small point of light.
+- **Color:** near-black surfaces in three steps, hairline borders, and grey text in three
+  steps. Purple is the only color. No green, red, blue or orange anywhere, including in code.
+- **Glow:** only on the chosen agent's card and on a "working" dot. Nowhere else.
+- **Type:** Inter for the interface. JetBrains Mono for code, the terminal, file names and
+  branch names. Three sizes only.
+- **Layout and spacing:** a few rounded panes on a black page, 8px apart. Generous padding
+  inside each pane. Sparse, as in pin 7, not dense, as in pin 3: a row shows a name and one or
+  two facts, never a line of tags and counts.
+- **Components:** panes, agent cards, tabs, a chat, a terminal, a file tree, a code viewer, a
+  commit list, a branch list and phase rows. Nothing else. No sidebar or icon rail, although
+  every pin has one: the user did not ask for one. No icons unless a step calls for one.
+- **Motion:** none. These are static pages.
+- **States without color:** working is a purple dot with glow. Waiting for you is a solid
+  white dot. Idle is a hollow grey ring. The state's name is always written next to the dot.
+- **Avoid:** over-engineered glow, gradients, glass, photos behind panels, charts, decorative
+  panels, and the multi-column kanban structure.
 
-**Agreed by the user:** no
+### Named values
+
+`design/style.css` defines exactly these, with these names and values, in a `:root` block.
+Every other rule uses them by name.
+
+| Name | Value | Used for |
+|---|---|---|
+| `--bg` | `#050506` | The page behind the panes |
+| `--pane` | `#0b0b0e` | Panes |
+| `--raised` | `#121216` | Cards, the chosen tab, input boxes, code blocks |
+| `--line` | `#1d1d23` | Hairline borders and dividers |
+| `--text` | `#e9e9ee` | Main text |
+| `--text-2` | `#9a9aa5` | Secondary text |
+| `--text-3` | `#6b6b76` | Muted labels, line numbers, comments in code |
+| `--accent` | `#8b5cf6` | The one color: chosen states, working dots, progress bars, keywords in code |
+| `--accent-soft` | `rgba(139, 92, 246, 0.14)` | A faint purple fill |
+| `--glow` | `0 0 22px rgba(139, 92, 246, 0.28)` | The glow, as a `box-shadow` |
+| `--sans` | `"Inter", system-ui, -apple-system, "Segoe UI", sans-serif` | Interface text |
+| `--mono` | `"JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace` | Code, terminal, file and branch names |
+| `--fs-s` | `12px` | Labels, states, counts |
+| `--fs-m` | `13px` | Body text, code |
+| `--fs-l` | `15px` | Agent names, pane titles |
+| `--gap` | `8px` | Space between panes and between cards |
+| `--pad` | `16px` | Padding inside a pane |
+| `--radius` | `12px` | Pane corners |
+| `--radius-s` | `8px` | Corners of cards, tabs, inputs |
