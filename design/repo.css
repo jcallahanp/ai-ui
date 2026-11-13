@@ -1,0 +1,217 @@
+/* Repository view: branches, file tree, code and commits. */
+
+#output .repo {
+  flex: 1;
+  min-height: 0;
+}
+
+.repo {
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr) 190px;
+}
+
+.repo-branches,
+.repo-tree,
+.repo-code,
+.repo-commits {
+  min-width: 0;
+  min-height: 0;
+  overflow: auto;
+}
+
+.repo-branches {
+  grid-column: 1;
+  grid-row: 1;
+  padding: 12px var(--gap) var(--gap);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.repo-tree {
+  grid-column: 1;
+  grid-row: 2 / 4;
+  padding: 12px var(--gap) var(--gap);
+  border-right: 1px solid var(--line);
+}
+
+.repo-code {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.repo-commits {
+  grid-column: 2;
+  grid-row: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 9px var(--pad) 5px;
+  border-top: 1px solid var(--line);
+}
+
+.repo-label {
+  margin: 0 0 6px;
+  padding: 0 var(--gap);
+  font-size: var(--fs-s);
+  color: var(--text-3);
+}
+
+.repo-commits .repo-label {
+  margin: 0 0 1px;
+  padding: 0;
+  line-height: 14px;
+}
+
+/* Branches */
+
+.repo-branch {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--gap);
+  padding: 5px var(--gap);
+  border-radius: var(--radius-s);
+  color: var(--text-2);
+}
+
+.repo-branch.is-chosen {
+  background: var(--raised);
+  color: var(--text);
+}
+
+.repo-branch-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--mono);
+  font-size: var(--fs-s);
+}
+
+.repo-branch-agent {
+  flex: none;
+  font-size: var(--fs-s);
+  color: var(--text-2);
+}
+
+/* File tree */
+
+.repo-node {
+  padding: 4px var(--gap);
+  border-radius: var(--radius-s);
+  font-family: var(--mono);
+  font-size: var(--fs-s);
+  white-space: nowrap;
+}
+
+.repo-dir {
+  color: var(--text-2);
+}
+
+.repo-file {
+  color: var(--text);
+}
+
+.repo-in-1 {
+  padding-left: calc(var(--gap) + 14px);
+}
+
+.repo-in-2 {
+  padding-left: calc(var(--gap) + 28px);
+}
+
+.repo-node.is-chosen {
+  background: var(--raised);
+  color: var(--text);
+}
+
+/* Code */
+
+.repo-path {
+  flex: none;
+  margin: 0;
+  padding: 12px var(--pad);
+  border-bottom: 1px solid var(--line);
+  font-size: var(--fs-s);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.repo-path-file {
+  font-family: var(--mono);
+  color: var(--text);
+}
+
+.repo-path-branch {
+  color: var(--text-3);
+}
+
+.repo-src {
+  flex: 1;
+  min-height: 0;
+  margin: 0;
+  padding: 12px var(--pad);
+  overflow: auto;
+  font-family: var(--mono);
+  font-size: var(--fs-s);
+  line-height: 1.6;
+  font-variant-ligatures: none;
+  color: var(--text);
+}
+
+.repo-ln {
+  display: inline-block;
+  width: 2ch;
+  margin-right: 14px;
+  text-align: right;
+  color: var(--text-3);
+  user-select: none;
+}
+
+.repo-kw {
+  color: var(--accent);
+}
+
+.repo-cm {
+  color: var(--text-3);
+}
+
+/* Commits */
+
+.repo-commit {
+  display: flex;
+  flex-direction: column;
+}
+
+.repo-commit-msg {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  color: var(--text);
+  line-height: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.repo-merge {
+  font-size: var(--fs-s);
+  color: var(--text-3);
+}
+
+.repo-commit-meta {
+  display: flex;
+  gap: var(--gap);
+  font-size: var(--fs-s);
+  line-height: 14px;
+  color: var(--text-2);
+  white-space: nowrap;
+}
+
+.repo-commit-branch {
+  font-family: var(--mono);
+}
