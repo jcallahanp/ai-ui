@@ -1,13 +1,14 @@
 # Inspiration
 
-**Status:** pins collected on 2026-11-13. The user has not yet said what they like about each
-one, and no design direction is written.
+**Status:** pins collected and the user's reasons recorded on 2026-11-13. A design direction is
+drafted below from their words. The user has not agreed to it yet.
 
 ## Source
 
 - Board: [AI project ideas](https://www.pinterest.com/jcallahanp/ai-project-ideas/)
 - The board opens in a browser without a Pinterest login. No connector or API key is needed.
 - It held 13 pins on 2026-11-13. Three images are pinned twice, so there are 10 unique images.
+  The user says the duplicates are an accident, so they carry no extra weight.
 - The image files are not copied into this repo. The repo is public and the images are other
   designers' work, so each pin links to the full-size image on Pinterest's image host instead.
   Open the link to look at a pin.
@@ -43,10 +44,18 @@ Numbered in board order.
 | 9 | [Banking dashboard](https://i.pinimg.com/originals/08/e7/e2/08e7e2d606baf9a7dc2912b3f20c3db3.jpg) | normal | Pinned twice. Dark slate panels with soft raised shadows. Icon rail, a bank card, category tiles, two lists, a ring showing the balance, and thin gradient bars. |
 | 10 | [Developer feed](https://i.pinimg.com/originals/5a/4c/13/5a4c13d373fa70c0f78e7d287874cf36.png) | normal | Pinned twice. Warm near-black, monospace type throughout, one orange accent. Sidebar nav, a post composer, Following / Featured / Rising tabs, and a post containing a code block. |
 
-## What the user likes about each pin
+## What the user likes
 
-Not asked yet. Ask; do not guess. The same pin can be liked for its color, its layout or its
-mood.
+The user answered for the board as a whole on 2026-11-13, not pin by pin.
+
+- **The dark theme.** "I like that they are dark themed. They have a sort of futuristic yet
+  minimalist rogue vibe."
+- **How dark:** "I like dark more than anything, probably black or very dark." This was the
+  answer to whether pin 3's flat grey or pin 7's navy over a photo is closer. It settles the
+  color, toward black. It does not settle dense cards against sparse ones.
+- **Glow, in moderation.** "It's the sort of futuristic and rogue vibe that the glow gives
+  that draws me, while overengineering of it tends to make me ADHD and I dislike it." So the
+  glow is wanted for the mood it gives, and a screen crowded with it is not.
 
 ## Observations
 
@@ -64,22 +73,30 @@ These are Claude's, from looking at the pins. The user has not agreed to any of 
 
 ## Questions for the user
 
-- What do you like about each pin?
-- Pins 3, 9 and 10 are each pinned twice. Is that emphasis, or an accident?
-- Pins 3 and 7 disagree: flat grey or navy over a photo, dense cards or sparse ones. Which?
-- From the non-board pins, what should carry over, given that the board should be simple?
+Answered on 2026-11-13 and recorded above: what the user likes, the duplicate pins, how dark,
+and what to carry over from the glow-and-glass pins.
+
+Still open:
+
+- What color the glow and the accents are. The pins lean purple; pin 10 uses orange.
+- Dense or sparse: how much each card or row shows.
+- Type: a plain sans as in pin 3, or monospace as in pin 10.
 
 ## Design direction
 
-Not written yet. Written once the questions above are answered, then agreed with the user.
-Where pins disagree with each other, say which one wins and why.
+A draft. Each line says whether it comes from the user or from Claude. Where pins disagree
+with each other, say which one wins and why.
 
-- **Mood:**
-- **Color:**
-- **Type:**
-- **Layout and spacing:**
-- **Components:**
-- **Motion:**
-- **Avoid:**
+- **Mood:** futuristic, minimalist, rogue. From the user.
+- **Color:** black or very dark surfaces. From the user. Glow used sparingly as an accent,
+  for mood and not for decoration. From the user. The glow color is open.
+- **Type:** open.
+- **Layout and spacing:** simple panes with room around them: an agents pane on the right, a
+  git column and a steps pane. From the user's interview answer. The rest of the layout is open.
+- **Components:** agent cards that show little more than a name. From the user. A left sidebar
+  or rail appears in every pin, but the user has not asked for one.
+- **Motion:** open.
+- **Avoid:** over-engineered glow, crowded dashboards with many charts and panels, and the
+  multi-column kanban structure. From the user.
 
 **Agreed by the user:** no

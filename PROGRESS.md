@@ -10,8 +10,8 @@ The only record of where the project stands. Update it the moment something chan
   after they choose an agent's card.
 - **Blocked on:** nothing
 - **Done out of order:** the user shared their Pinterest board before the interview. Its 10
-  unique pins and the user's weighting are in `docs/INSPIRATION.md`. The questions listed there
-  still need answers before a design direction can be written.
+  unique pins, the user's weighting and what they like are in `docs/INSPIRATION.md`, with a
+  draft design direction. The draft is not agreed, and three questions there are still open.
 
 ## Phases
 
