@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>atlas</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .term {
+      flex: 1;
+      min-height: 0;
+      overflow-y: auto;
+      margin: 0;
+      padding: var(--pad);
+      font-family: var(--mono);
+      font-size: var(--fs-m);
+      line-height: 1.6;
+      color: var(--text-2);
+      white-space: pre;
+    }
+
+    .term-prompt {
+      color: var(--text-2);
+    }
+
+    .term-cmd {
+      color: var(--text);
+    }
+
+    .term-out {
+      color: var(--text-2);
+    }
+
+    .term-cursor {
+      display: inline-block;
+      width: 1ch;
+      height: 1.2em;
+      vertical-align: text-bottom;
+      background: var(--text);
+    }
+  </style>
+</head>
+<body>
+  <section id="output" class="pane">
+    <nav class="tabs">
+      <a class="tab" href="a-repo.html">Repository</a>
+      <a class="tab is-chosen" href="a-chat.html">api-design.md</a>
+      <a class="tab" href="#">schema diagram</a>
+    </nav>
+    <p class="editing"><span class="dot working"></span>Fable 5.2 is editing</p>
+    <div class="doc-scroll">
+      <article class="doc">
+        <h1>API design</h1>
+        <p>atlas is a small API service for users and their orders. This doc lists the routes, what each one is for and how errors come back, so the handlers and the clients agree on one shape.</p>
+        <h2>Routes</h2>
+        <table>
+          <thead>
+            <tr><th>Method</th><th>Path</th><th>Purpose</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="code">GET</td><td class="code">/users</td><td>List users, newest first</td></tr>
+            <tr><td class="code">GET</td><td class="code">/users/:id</td><td>Get one user by id</td></tr>
+            <tr><td class="code">POST</td><td class="code">/users</td><td>Create a user</td></tr>
+            <tr><td class="code">PATCH</td><td class="code">/users/:id</td><td>Update a user's name or email</td></tr>
+            <tr><td class="code">GET</td><td class="code">/orders?user_id=</td><td>List orders, filtered by user</td></tr>
+          </tbody>
+        </table>
+        <h2>Errors</h2>
+        <p>Every error returns a JSON body with a short code and a message a person can read. The HTTP status matches the code, so clients can check either one.</p>
+<pre>{
+  "error": {
+    "code": "user_not_found",
+    "message": "No user with id 42.",
+    "status": 404
+  }
+}</pre>
+      </article>
+    </div>
+  </section>
+  <section id="chat" class="pane">
+    <header class="chat-head">
+      <span class="chat-name">Warp</span>
+      <span class="agent-state"><span class="dot idle"></span>terminal</span>
+    </header>
+<pre class="term"><span class="term-prompt">~/atlas main $</span> <span class="term-cmd">git status</span>
+<span class="term-out">On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean</span>
+
+<span class="term-prompt">~/atlas main $</span> <span class="term-cmd">git log --oneline -3</span>
+<span class="term-out">a3f9c21 Add data model for users and orders
+7be04d2 Set up project scaffold
+1c0e8aa Initial commit</span>
+
+<span class="term-prompt">~/atlas main $</span> <span class="term-cmd">npm test</span>
+<span class="term-out">&gt; atlas@0.1.0 test
+&gt; node --test
+
+ok 1 - users model
+ok 2 - orders model
+ok 3 - order belongs to a user
+ok 4 - config loads
+
+tests 4
+pass 4
+fail 0</span>
+
+<span class="term-prompt">~/atlas main $</span> <span class="term-cursor"></span></pre>
+  </section>
+  <div class="side">
+    <section id="agents" class="pane">
+      <a class="agent" href="a-chat.html">
+        <span class="agent-name">Fable 5.2</span>
+        <span class="agent-state"><span class="dot working"></span>working</span>
+      </a>
+      <a class="agent is-chosen" href="a-warp.html">
+        <span class="agent-name">Warp</span>
+        <span class="agent-state"><span class="dot idle"></span>idle</span>
+      </a>
+      <a class="agent" href="#">
+        <span class="agent-name">Deep Seek</span>
+        <span class="agent-state"><span class="dot waiting"></span>waiting for you</span>
+      </a>
+      <a class="agent" href="#">
+        <span class="agent-name">GLM</span>
+        <span class="agent-state"><span class="dot working"></span>working</span>
+      </a>
+      <a class="agent" href="#">
+        <span class="agent-name">Kimi</span>
+        <span class="agent-state"><span class="dot idle"></span>idle</span>
+      </a>
+    </section>
+    <section id="phases" class="pane">
+      <h2 class="ph-title">Phases</h2>
+      <div class="ph-row">
+        <div class="ph-phase is-done">
+          <div class="ph-line"><span class="ph-name">Scaffold</span><span class="ph-count">4/4</span></div>
+          <div class="ph-track"><div class="ph-fill" style="width: 100%"></div></div>
+        </div>
+      </div>
+      <div class="ph-row">
+        <div class="ph-phase is-done">
+          <div class="ph-line"><span class="ph-name">Data model</span><span class="ph-count">6/6</span></div>
+          <div class="ph-track"><div class="ph-fill" style="width: 100%"></div></div>
+        </div>
+      </div>
+      <div class="ph-group">
+        <p class="ph-par">in parallel</p>
+        <div class="ph-row ph-pair">
+        <div class="ph-phase">
+          <div class="ph-line"><span class="ph-name">API routes</span><span class="ph-count">5/8</span></div>
+          <div class="ph-track"><div class="ph-fill" style="width: 62.5%"></div></div>
+        </div>
+        <div class="ph-phase">
+          <div class="ph-line"><span class="ph-name">Auth</span><span class="ph-count">2/6</span></div>
+          <div class="ph-track"><div class="ph-fill" style="width: 33.3333%"></div></div>
+        </div>
+        </div>
+      </div>
+      <div class="ph-group">
+        <p class="ph-par">in parallel</p>
+        <div class="ph-row ph-pair">
+        <div class="ph-phase">
+          <div class="ph-line"><span class="ph-name">Web client</span><span class="ph-count">1/9</span></div>
+          <div class="ph-track"><div class="ph-fill" style="width: 11.1111%"></div></div>
+        </div>
+        <div class="ph-phase">
+          <div class="ph-line"><span class="ph-name">CLI</span><span class="ph-count">0/5</span></div>
+          <div class="ph-track"><div class="ph-fill" style="width: 0%"></div></div>
+        </div>
+        </div>
+      </div>
+      <div class="ph-row">
+        <div class="ph-phase">
+          <div class="ph-line"><span class="ph-name">Tests and release</span><span class="ph-count">0/7</span></div>
+          <div class="ph-track"><div class="ph-fill" style="width: 0%"></div></div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
