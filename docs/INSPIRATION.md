@@ -21,6 +21,11 @@ Pins 3 and 7 are the two that fit that description, so they are marked **heavy**
 two is Claude's reading of the instruction; the user has not confirmed the choice. Where a
 heavy pin and another pin disagree, the heavy pin wins.
 
+Later on 2026-11-13 the user said a kanban had become too complex and space-consuming for
+showing project steps, and asked for one simple pane instead. So do not copy the four-column
+kanban structure from pins 3 and 7. Whether those pins now count for their look only is an
+open question in `docs/INTERVIEW.md`.
+
 ## Pins
 
 Numbered in board order.
