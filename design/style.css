@@ -332,3 +332,78 @@ body {
   color: var(--text);
   overflow-x: auto;
 }
+
+#phases {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: var(--pad);
+  overflow-y: auto;
+}
+
+.ph-title {
+  margin: 0;
+  font-size: var(--fs-l);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.ph-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.ph-par {
+  margin: 0;
+  font-size: var(--fs-s);
+  color: var(--text-3);
+}
+
+.ph-row {
+  display: flex;
+  gap: var(--pad);
+}
+
+.ph-phase {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ph-line {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--gap);
+}
+
+.ph-name {
+  font-size: var(--fs-m);
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ph-phase.is-done .ph-name {
+  color: var(--text-2);
+}
+
+.ph-count {
+  flex: none;
+  font-size: var(--fs-s);
+  color: var(--text-2);
+}
+
+.ph-track {
+  height: 2px;
+  background: var(--line);
+}
+
+.ph-fill {
+  height: 100%;
+  background: var(--accent);
+}
