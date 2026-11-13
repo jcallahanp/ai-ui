@@ -78,7 +78,6 @@ and what to carry over from the glow-and-glass pins.
 
 Still open:
 
-- What color the glow and the accents are. The pins lean purple; pin 10 uses orange.
 - Dense or sparse: how much each card or row shows.
 - Type: a plain sans as in pin 3, or monospace as in pin 10.
 
@@ -88,9 +87,11 @@ A draft. Each line says whether it comes from the user or from Claude. Where pin
 with each other, say which one wins and why.
 
 - **Mood:** futuristic, minimalist, rogue. From the user.
-- **Color:** black or very dark surfaces. From the user. Glow used sparingly as an accent,
-  for mood and not for decoration. From the user. The glow color is open.
-- **Type:** open.
+- **Color:** black or very dark surfaces, "mostly a dark theme". From the user. Accents "very
+  subtle", in purple or red. From the user. Proposed in `docs/REQUIREMENTS.md`: purple as the
+  one accent, because the pins lean purple and red reads as an error.
+- **Type:** not answered by the user. Proposed in `docs/REQUIREMENTS.md`: a plain sans for the
+  interface and monospace for code and the terminal.
 - **Layout and spacing:** simple panes with room around them: an agents pane on the right, a
   git column and a steps pane. From the user's interview answer. The rest of the layout is open.
 - **Components:** agent cards that show little more than a name. From the user. A left sidebar

@@ -1,6 +1,6 @@
 # Interview
 
-**Status:** in progress. Started 2026-11-13.
+**Status:** done. The user agreed with the summary on 2026-11-13.
 
 The aim is to understand why the user wants this, not only what they asked for. Record what
 they say in their own words. Mark anything you inferred as an inference.
@@ -18,7 +18,8 @@ they say in their own words. Mark anything you inferred as an inference.
 
 ## Summary
 
-Written 2026-11-13 and shown to the user. The interview is over when the user agrees with it.
+Written 2026-11-13. The user agreed with it the same day and added one thing in the same
+message: branches, now part of point 4.
 
 The user runs five agents: Fable 5.2, Warp (their terminal), Deep Seek, GLM and Kimi. Today
 they lose time switching between tools to work with them. They want one dark, minimal
@@ -35,18 +36,19 @@ The dashboard has five parts:
    the agents are producing, such as an artifact or a doc, and all the agents work on the same
    output. The user watches it change and chooses whom to talk to.
 4. **Repository.** The active git repository, readable inside the dashboard: browse folders,
-   read code, and watch commits and merges arrive live. Who did what is secondary. To be
+   read code, and watch commits and merges arrive live. Agents work on different branches, so
+   the user wants to see the branches at once if possible. Who did what is secondary. To be
    designed two ways for the user to choose: as one of the things the output center shows, and
    as a separate column that is always on screen.
 5. **Phases pane.** The project broken into phases by an AI, showing which phases run in
    parallel and how far along each is. One simple pane, not a kanban.
 
 The look: black or very dark, futuristic, minimalist and rogue, with glow used sparingly.
-Nothing crowded or over-engineered.
+Accents are very subtle; purple or red is acceptable. Nothing crowded or over-engineered.
 
 Out of scope: functioning software, and issue tracking of the kind Paperclip does.
 
-**Agreed by the user:** no
+**Agreed by the user:** yes, 2026-11-13
 
 ## What the user has described so far
 
@@ -100,14 +102,14 @@ From the user's 2026-11-13 answers. Their words where possible. Not yet agreed a
 
 ## Open questions
 
+The interview is over. These were not answered. Each is settled by a proposal in
+`docs/REQUIREMENTS.md` that the user agrees to or changes, or by the user choosing between
+designs.
+
 - Which of the two repository placements the user picks, once they have seen both designed.
-- How the user moves between outputs in the output center, and how many there are at once.
-- How five areas (agent cards, chat, output center, repository, steps) fit on one screen
-  without it becoming crowded, which the user dislikes.
-- How progress on a phase is measured and shown: a count of steps done, a bar, or a state.
-- Whether a terminal agent (Warp) looks the same as a chat agent or different.
-- The two heavy pins are kanban boards, but the user found a kanban too complex for the steps
-  pane. Whether those pins now stand for their look only.
+- How the user moves between outputs in the output center.
+- How progress on a phase is measured and shown.
+- The typeface. The user answered the accent color but not the type.
 
 ## Log
 
@@ -127,3 +129,6 @@ Add each exchange as it happens, newest last.
 | 2026-11-13 | For the steps pane, where do the steps come from and what do you want to see at a glance? | "Probably have an AI break it into phases. We want to see the phases and then which would run in parallel and how far they are." |
 | 2026-11-13 | What screen will you use this on? | "A laptop mostly. But large monitor flexibility be nice." |
 | 2026-11-13 | Should an agent's card show what the agent is doing (working, waiting for you, idle)? | "If it can be kept simple." |
+| 2026-11-13 | Is the summary right? | "Yes." |
+| 2026-11-13 | What color is the glow, and what kind of type? | "Accents should be very subtle. Mostly a dark theme. Purple or red is alright." The type was not answered. |
+| 2026-11-13 | None. The user added this unprompted. | "Agents will work on different branches, not just files in git, so I want to see branches at once if possible." |
