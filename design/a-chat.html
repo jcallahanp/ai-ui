@@ -6,7 +6,42 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <section id="output" class="pane"></section>
+  <section id="output" class="pane">
+    <nav class="tabs">
+      <a class="tab" href="a-repo.html">Repository</a>
+      <a class="tab is-chosen" href="a-chat.html">api-design.md</a>
+      <a class="tab" href="#">schema diagram</a>
+    </nav>
+    <p class="editing"><span class="dot working"></span>Fable 5.2 is editing</p>
+    <div class="doc-scroll">
+      <article class="doc">
+        <h1>API design</h1>
+        <p>atlas is a small API service for users and their orders. This doc lists the routes, what each one is for and how errors come back, so the handlers and the clients agree on one shape.</p>
+        <h2>Routes</h2>
+        <table>
+          <thead>
+            <tr><th>Method</th><th>Path</th><th>Purpose</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="code">GET</td><td class="code">/users</td><td>List users, newest first</td></tr>
+            <tr><td class="code">GET</td><td class="code">/users/:id</td><td>Get one user by id</td></tr>
+            <tr><td class="code">POST</td><td class="code">/users</td><td>Create a user</td></tr>
+            <tr><td class="code">PATCH</td><td class="code">/users/:id</td><td>Update a user's name or email</td></tr>
+            <tr><td class="code">GET</td><td class="code">/orders?user_id=</td><td>List orders, filtered by user</td></tr>
+          </tbody>
+        </table>
+        <h2>Errors</h2>
+        <p>Every error returns a JSON body with a short code and a message a person can read. The HTTP status matches the code, so clients can check either one.</p>
+<pre>{
+  "error": {
+    "code": "user_not_found",
+    "message": "No user with id 42.",
+    "status": 404
+  }
+}</pre>
+      </article>
+    </div>
+  </section>
   <section id="chat" class="pane">
     <header class="chat-head">
       <span class="chat-name">Fable 5.2</span>
