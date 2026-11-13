@@ -46,7 +46,7 @@ Step statuses: `todo`, `doing`, `to verify`, `done`, `failed`.
 | S08 Repository view | done | pass, 2026-11-13 |  |
 | S09 Layout B | done | pass, 2026-11-13 | The agent shrank commit text to 12px and tightened spacing to fit the 260px column. |
 | S10 Large monitor | done | pass, 2026-11-13 |  |
-| S11 Agents on the left, with the team label | doing |  |  |
+| S11 Agents on the left, with the team label | to verify |  |  |
 | S12 Idea 1, branch chips | todo | | |
 | S13 Idea 2, branch switcher in the tab row | todo | | |
 | S14 Idea 3, branches as the live list | todo | | |
