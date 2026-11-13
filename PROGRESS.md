@@ -32,8 +32,8 @@ Step statuses: `todo`, `doing`, `to verify`, `done`, `failed`.
 |---|---|---|---|
 | S01 Named values | done | pass, 2026-11-13 |  |
 | S02 Page shell and agents pane | done | pass, 2026-11-13 |  |
-| S03 Chat | to verify |  |  |
-| S04 Output center | todo | | |
+| S03 Chat | done | pass on second check, 2026-11-13 | First check failed: a screenshot was left in design/shots/. A new agent removed it. |
+| S04 Output center | doing |  |  |
 | S05 Phases pane | todo | | |
 | S06 Warp chosen | todo | | |
 | S07 Empty output center | todo | | |

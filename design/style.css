@@ -123,3 +123,102 @@ body {
 .dot.idle {
   border: 1px solid var(--text-3);
 }
+
+#chat {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.chat-head {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: var(--pad);
+  border-bottom: 1px solid var(--line);
+}
+
+.chat-name {
+  font-size: var(--fs-l);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.chat-log {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--pad);
+  padding: var(--pad);
+  line-height: 1.55;
+}
+
+.msg-op {
+  align-self: flex-end;
+  max-width: 80%;
+  padding: 10px 14px;
+  background: var(--raised);
+  border-radius: var(--radius-s);
+  color: var(--text);
+}
+
+.msg-agent {
+  align-self: stretch;
+  color: var(--text);
+}
+
+.msg code {
+  font-family: var(--mono);
+  color: var(--text);
+}
+
+.chat-note {
+  margin: calc(-1 * var(--pad) + 4px) 0 0;
+  font-size: var(--fs-s);
+  color: var(--text-3);
+}
+
+.chat-input {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  margin: var(--pad);
+  margin-top: 0;
+  padding: 10px 12px;
+  background: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-s);
+}
+
+.chat-input textarea {
+  flex: 1;
+  resize: none;
+  height: 20px;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: var(--fs-m);
+  line-height: 20px;
+}
+
+.chat-input textarea::placeholder {
+  color: var(--text-3);
+}
+
+.chat-input button {
+  flex: none;
+  padding: 4px 10px;
+  background: transparent;
+  border: 0;
+  color: var(--text-2);
+  font-family: var(--sans);
+  font-size: var(--fs-s);
+  cursor: pointer;
+}
