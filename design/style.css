@@ -36,3 +36,90 @@ body {
   font-size: var(--fs-m);
   overflow: hidden;
 }
+
+body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr) 300px;
+  grid-template-rows: minmax(0, 1fr);
+  gap: var(--gap);
+  padding: var(--gap);
+}
+
+.pane {
+  background: var(--pane);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  min-height: 0;
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  min-height: 0;
+}
+
+#agents {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  padding: var(--gap);
+}
+
+#phases {
+  flex: 1;
+}
+
+.agent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  height: 72px;
+  padding: 0 var(--pad);
+  background: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-s);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.agent.is-chosen {
+  border-color: var(--accent);
+  box-shadow: var(--glow);
+}
+
+.agent-name {
+  font-size: var(--fs-l);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.agent-state {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  font-size: var(--fs-s);
+  color: var(--text-2);
+}
+
+.dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dot.working {
+  background: var(--accent);
+  box-shadow: var(--glow);
+}
+
+.dot.waiting {
+  background: var(--text);
+}
+
+.dot.idle {
+  border: 1px solid var(--text-3);
+}

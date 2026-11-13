@@ -31,8 +31,8 @@ Step statuses: `todo`, `doing`, `to verify`, `done`, `failed`.
 | Step | Status | Check result | Note |
 |---|---|---|---|
 | S01 Named values | done | pass, 2026-11-13 |  |
-| S02 Page shell and agents pane | to verify |  |  |
-| S03 Chat | todo | | |
+| S02 Page shell and agents pane | done | pass, 2026-11-13 |  |
+| S03 Chat | doing |  |  |
 | S04 Output center | todo | | |
 | S05 Phases pane | todo | | |
 | S06 Warp chosen | todo | | |
