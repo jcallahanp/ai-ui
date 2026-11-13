@@ -4,11 +4,16 @@ The only record of where the project stands. Update it the moment something chan
 
 ## Now
 
-- **Phase:** 6, Build and verify (done). All ten steps passed an independent check.
-- **Next action:** The user compares `design/a-repo.html` (layout A) with `design/b-chat.html`
-  (layout B) and picks one (R14). Then record the choice in `docs/REQUIREMENTS.md` under
-  "Changes after agreement" and plan any follow-up steps in `GOAL.md`.
-- **Blocked on:** the user's choice between layout A and layout B.
+- **Phase:** 6, Build and verify. Round 2 in progress.
+- **Why a round 2:** on 2026-11-13 the user saw the six round 1 pages and asked for changes:
+  agents on the left, one pane that holds either an output or the repository, a few ideas for
+  switching branches without a column, a red theme beside the purple one for every option, and
+  a "John's Red Team" label. Recorded in `docs/REQUIREMENTS.md` under "Changes after agreement".
+- **Next action:** Run the first step from S11 on that is not `done`, in the order `GOAL.md`
+  gives. One Opus 5.5 agent does the step; a different one checks it.
+- **Blocked on:** nothing
+- **Still to come from the user:** which idea and which theme. Then the Warp, empty and
+  large-monitor pages are redone in that style, and the round 1 pages are removed.
 - **Not merged:** everything since the first commit is on `claude/festive-volta-u6qury`, not
   `main`. The user has not asked for a merge.
 
@@ -21,7 +26,7 @@ The only record of where the project stands. Update it the moment something chan
 | 3 | Personas | done | Written from the agreed requirements. Not shown to the user separately; they said to proceed |
 | 4 | Inspiration | done | Design direction final. It follows R19 to R22. Not shown to the user separately |
 | 5 | Plan | done | `GOAL.md` has ten steps, each with yes-or-no checks |
-| 6 | Build and verify | done | Every step below is `done` |
+| 6 | Build and verify | in progress | Every step below is `done` |
 
 Phase statuses: `not started`, `in progress`, `done`.
 
@@ -41,3 +46,8 @@ Step statuses: `todo`, `doing`, `to verify`, `done`, `failed`.
 | S08 Repository view | done | pass, 2026-11-13 |  |
 | S09 Layout B | done | pass, 2026-11-13 | The agent shrank commit text to 12px and tightened spacing to fit the 260px column. |
 | S10 Large monitor | done | pass, 2026-11-13 |  |
+| S11 Agents on the left, with the team label | doing |  |  |
+| S12 Idea 1, branch chips | todo | | |
+| S13 Idea 2, branch switcher in the tab row | todo | | |
+| S14 Idea 3, branches as the live list | todo | | |
+| S15 Red theme | todo | | |

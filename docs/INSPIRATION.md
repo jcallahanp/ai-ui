@@ -127,3 +127,35 @@ Every other rule uses them by name.
 | `--pad` | `16px` | Padding inside a pane |
 | `--radius` | `12px` | Pane corners |
 | `--radius-s` | `8px` | Corners of cards, tabs, inputs |
+
+### Red theme
+
+Added 2026-11-13 at the user's request: "a secondary red themed one with a more rogue vibe".
+It is an alternative to the purple theme, not a replacement. The values are Claude's.
+
+The red theme is the same pages with `design/red.css` loaded after the other stylesheets.
+It changes four things and nothing else:
+
+- **Color:** red takes the place of purple as the only color. The blacks and greys lose their
+  blue tint and become neutral.
+- **Corners:** nearly square, where the purple theme is rounded.
+- **Labels:** small labels are in the monospace face, in capitals, widely spaced: the team
+  label, pane titles, and section labels such as "Branches", "Files" and "in parallel".
+- **Team label:** a small solid red square sits before "John's Red Team".
+
+`red.css` redefines exactly these named values. Every other named value keeps its value.
+
+| Name | Value |
+|---|---|
+| `--bg` | `#040404` |
+| `--pane` | `#0a0a0a` |
+| `--raised` | `#131313` |
+| `--line` | `#222222` |
+| `--text` | `#ededed` |
+| `--text-2` | `#9b9b9b` |
+| `--text-3` | `#6c6c6c` |
+| `--accent` | `#dc2f3c` |
+| `--accent-soft` | `rgba(220, 47, 60, 0.14)` |
+| `--glow` | `0 0 22px rgba(220, 47, 60, 0.3)` |
+| `--radius` | `4px` |
+| `--radius-s` | `2px` |

@@ -1,6 +1,7 @@
 # Personas
 
-**Status:** written 2026-11-13 from the agreed requirements. Not shown to the user separately:
+**Status:** written 2026-11-13 from the agreed requirements, and updated the same day for the
+changes the user asked for after seeing the first designs (P1.10, P1.11, P1.13, P1.17). Not shown to the user separately:
 every check below restates a requirement the user agreed to, and the user said to proceed.
 
 A persona is a real kind of person from the interview, not an invented one. Each has "done
@@ -31,19 +32,23 @@ finished when every check is a yes.
   - P1.8: In the repository view, can you see the folder tree and read a file's code? (R11)
   - P1.9: Are commits and merges listed newest first, each with its message, branch and
     agent? (R12)
-  - P1.10: Is every branch visible at once, each with its agent, and is the chosen branch
-    marked? (R13)
-  - P1.11: Are there two layouts to compare: one with the repository as a tab in the output
-    center, one with it as a separate column? (R14)
+  - P1.10: Can you see every branch with its agent and switch between them, without the
+    branches taking a column of their own, and is the chosen branch's name always
+    visible? (R13 as changed)
+  - P1.11: Are there three columns, with the agents on the left and one pane that shows either
+    an output or the repository? (R1 and R14 as changed)
   - P1.12: Does one compact pane show the phases in order, how far along each is as a count
     and a thin bar, and which phases run in parallel? (R15, R16, R17, R18)
-  - P1.13: Is every surface black or very dark, with purple the only color, and glow only on
-    the chosen card and on working states? (R19, R20)
+  - P1.13: Is every surface black or very dark, with the theme's one accent the only color
+    (purple, or red in the red theme), and glow only on the chosen card and on working
+    states? (R19, R20 as changed)
   - P1.14: Is there nothing on screen besides agents, the chat or terminal, the output
     center, the repository and the phases? (R22)
   - P1.15: At 1440 by 900, are the agent cards, the chat, the output center and the phases
     all visible with no sideways scrolling? (R23, R24)
   - P1.16: At 2560 by 1440, does the page show more at once than the laptop page does? (R25)
+  - P1.17: Does the dashboard carry the label "John's Red Team", sitting naturally in the
+    layout? (R28)
 
 ## P2: The builder
 

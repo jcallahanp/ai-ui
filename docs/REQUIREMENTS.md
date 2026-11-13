@@ -1,6 +1,7 @@
 # Requirements
 
-**Status:** agreed by the user on 2026-11-13, proposals included.
+**Status:** agreed by the user on 2026-11-13, proposals included. Changed the same day after the
+user saw the first designs: read "Changes after agreement" at the end before using the tables.
 
 A requirement says what a person must be able to see or do in the UI. Each one traces back to
 something the user said in `docs/INTERVIEW.md`. Nothing is built from a requirement the user
@@ -94,4 +95,9 @@ Record any change here with the date and the user's agreement, then update the t
 
 | Date | Change | Agreed |
 |---|---|---|
-| | | |
+| 2026-11-13 | R1: the agents pane is on the left, not the right. "Models should be on the left. I may have misspoken." | Yes, the user's own request |
+| 2026-11-13 | R14 is settled: neither layout as built. Layout B is rejected because it takes four columns. There are three columns, and one pane holds either an output or the repository, as in layout A. | Yes, the user's own request |
+| 2026-11-13 | R13 is narrowed: the user switches branches inside the repository view without the branches taking a whole column. The current branch's name stays visible. Several ideas for this are designed for the user to choose from. | Yes, the user's own request |
+| 2026-11-13 | R20 gains an alternative: every option is also shown in a red theme "with a more rogue vibe". The purple theme stays as an option. The user picks one. | Yes, the user's own request |
+| 2026-11-13 | New, R28: the dashboard carries a label reading "John's Red Team", cleanly integrated. Claude's choice, not confirmed: it sits at the top of the agents pane and appears in both themes. | The label: yes. Its place: not yet |
+| 2026-11-13 | R27 is on hold: the Warp, empty and large-monitor pages are redone once the user has picked an idea and a theme. The six pages from the first round have the agents on the right and are superseded. | Claude's plan, not confirmed |

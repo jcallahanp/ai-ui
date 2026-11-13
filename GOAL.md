@@ -21,9 +21,32 @@ the phases pane. Layout B adds a repository column at the far left.
 
 ## Order
 
+Round 1, done:
+
 - S01 to S05 run one after another. Each builds on the one before.
 - S06, S07 and S08 run in parallel after S05.
 - S09 and S10 run in parallel after S08.
+
+Round 2, added 2026-11-13 after the user saw round 1 (see "Changes after agreement" in
+`docs/REQUIREMENTS.md`). The agents move to the left, one pane holds either an output or the
+repository, and three ideas for switching branches are each shown in purple and in red:
+
+- S11 runs first.
+- S12, S13 and S14 run in parallel after S11.
+- S15 runs after S12, S13 and S14.
+
+Round 2 pages, all at 1440 by 900:
+
+| Page | Shows |
+|---|---|
+| `design/base.html` | Agents on the left with the team label, the chat, a doc open in the output pane |
+| `design/idea-1.html` | Repository open. Branches as a row of chips |
+| `design/idea-2.html` | Repository open. Branches in a switcher in the tab row |
+| `design/idea-3.html` | Repository open. Branches as a live list that replaces the commit list |
+| `design/base-red.html`, `design/idea-1-red.html`, `design/idea-2-red.html`, `design/idea-3-red.html` | The same four pages in the red theme |
+
+The six round 1 pages have the agents on the right and are superseded. Do not copy their
+layout. Round 2 steps may copy content from them where a step says so.
 
 ## Rules for every step
 
@@ -373,3 +396,202 @@ Use this wherever a step needs content, so every page tells the same story.
      other than below short content?
   5. Is the `<style>` block free of directly written colors, font families and font sizes,
      are `style.css` and `repo.css` unchanged, and is the page free of `<script>` and images?
+
+### S11: Agents on the left, with the team label
+- Do: Create `design/base.html` as a copy of `design/a-chat.html` with the agents on the left
+  and a team label, and add the rules it needs to the end of `design/style.css`. Do not change
+  or remove any existing rule in `style.css`, and do not change `a-chat.html`.
+  - `<body class="left">`. The children of `body` are in this order: the `<div class="side">`
+    holding `#agents` above `#phases`, then `#chat`, then `#output`.
+  - New rule: `body.left { grid-template-columns: 300px minmax(0, 1fr) minmax(0, 1.15fr); }`.
+  - The first child of `#agents` is `<h1 class="team">John's Red Team</h1>`, above the five
+    cards: `--fs-l`, weight 600, `--text`, left-aligned with the cards, with no top margin and
+    a small space below it. It reads as the title of the agents pane.
+  - Links: the Fable 5.2 card goes to `base.html` and the Warp card to `#`. The "Repository"
+    tab goes to `idea-1.html` and the "api-design.md" tab to `base.html`.
+  - Nothing else changes. The chat, the output pane, the cards and the phases keep their
+    content.
+- Read: `design/a-chat.html`, `design/style.css`
+- Write: `design/base.html`, `design/style.css`
+- Covers: R1 as changed, R28
+- Size: 1440 by 900
+- Done when:
+  1. Left to right, are the columns: agents above phases, then the chat, then the output pane?
+  2. Does "John's Red Team" sit at the top of the agents pane, above five cards, looking like
+     the pane's title?
+  3. Are all five cards and all seven phases fully visible without scrolling?
+  4. Do the chat and the output pane show the same content as in `a-chat.html`?
+  5. Does the page fit 1440 by 900 with no scrollbar?
+  6. Is `a-chat.html` unchanged, and does the `style.css` diff only add lines at the end?
+  7. Are the new CSS rules free of directly written colors, font families and font sizes, and
+     is the page free of `<script>` and images?
+
+### S12: Idea 1, branch chips
+- Do: Create `design/idea-1.html` as a copy of `design/base.html` with the repository open in
+  the output pane, and `design/idea-1.css` holding the rules this idea needs. The page links
+  `style.css`, then `repo.css`, then `idea-1.css`. Do not change `style.css` or `repo.css`.
+  - Tabs: "Repository" has `is-chosen` and goes to `idea-1.html`. "api-design.md" is not
+    chosen and goes to `base.html`. Remove the "is editing" line and the doc.
+  - Below the tabs put `<div class="r1">` filling the rest of the pane, in three rows.
+  - Row 1, `r1-branches`: all five placeholder branches as chips in one row, with no wrapping
+    and no scrolling. Each chip is an `<a class="r1-chip">` with two lines: the branch name in
+    `--mono` at `--fs-s`, and under it the agent's name at `--fs-s` in `--text-3`. Under
+    `main` the second line reads "default". The chip for `fable/api-routes` has `is-chosen`:
+    `--raised` background and its name in `--text`. The other chips have no background and
+    their names are in `--text-2`. Chips have `--radius-s` corners.
+  - Row 2 fills the spare height: the `repo-tree` part, 190px wide, at the left, and the
+    `repo-code` part beside it. Copy both from `design/a-repo.html` with the same classes and
+    content.
+  - Row 3, about 170px tall: the `repo-commits` part across the full width, with the label
+    "Commits" and the same five commits as in `a-repo.html`. Each commit is on one line: the
+    message at the left, and at the right its branch in `--mono`, the agent and the time, in
+    `--text-2` at `--fs-s`. The merge still starts with the word "merge".
+  - 1px `--line` dividers separate the rows and separate the tree from the code. No glow.
+- Read: `design/base.html`, `design/a-repo.html`, `design/style.css`, `design/repo.css`
+- Write: `design/idea-1.html`, `design/idea-1.css`
+- Covers: R11, R12, R13 as changed, R14 as changed
+- Size: 1440 by 900
+- Done when:
+  1. Is "Repository" the chosen tab, with the repository filling the output pane on the right?
+  2. Are all five branches visible as chips in a single row, each with its agent's name under
+     it ("default" under `main`), with only `fable/api-routes` marked as chosen?
+  3. Are the file tree and the code of `src/routes/users.ts` visible below the chips, with
+     the code readable?
+  4. Are there five commits across the full width, one line each, with message, branch,
+     agent and time, and the merge marked?
+  5. Is all text readable, with nothing cut off, overlapping or wrapped?
+  6. Are the side column and `#chat` identical to those in `base.html`, and does the page fit
+     1440 by 900 with no scrollbar?
+  7. Is `idea-1.css` free of directly written colors, font families and font sizes, are
+     `style.css` and `repo.css` unchanged, and is the page free of `<script>` and images?
+
+### S13: Idea 2, branch switcher in the tab row
+- Do: Create `design/idea-2.html` as a copy of `design/base.html` with the repository open in
+  the output pane, and `design/idea-2.css` holding the rules this idea needs. The page links
+  `style.css`, then `repo.css`, then `idea-2.css`. Do not change `style.css` or `repo.css`.
+  - Tabs: "Repository" has `is-chosen` and goes to `idea-2.html`. "api-design.md" is not
+    chosen and goes to `base.html`. Remove the "is editing" line and the doc.
+  - At the right end of the tab row, on the same line as the tabs, put a branch switcher:
+    `<details class="r2-switch" open>`. Its `<summary>` shows the chosen branch,
+    `fable/api-routes`, in `--mono` at `--fs-s` in `--text`, followed by the character "▾" in
+    `--text-3`. The summary has a 1px `--line` border and `--radius-s` corners, and the
+    browser's own disclosure marker is hidden.
+  - Inside the `<details>`, after the summary, is `<div class="r2-menu">`: a menu positioned
+    over the pane, just under the summary and aligned to its right edge, 260px wide, with the
+    `--raised` background, a 1px `--line` border and `--radius-s` corners. It lists all five
+    placeholder branches, one per row: the branch name in `--mono` at `--fs-s`, and the
+    agent's name at `--fs-s` in `--text-2` at the right. `main` shows no agent. The row for
+    `fable/api-routes` has `is-chosen`: a `--bg` background and `--text` color.
+  - The menu floats over the content below it and moves nothing. It is shown open. Because it
+    is a `<details>`, clicking the summary closes it with no script.
+  - Below the tabs put `<div class="r2">` filling the rest of the pane, in two rows. Row 1
+    fills the spare height: the `repo-tree` part, 190px wide, at the left, and the `repo-code`
+    part beside it, both copied from `design/a-repo.html` with the same classes and content.
+    Row 2, about 170px tall: the `repo-commits` part across the full width, with the label
+    "Commits" and the same five commits, each on one line: the message at the left, and at
+    the right its branch in `--mono`, the agent and the time, in `--text-2` at `--fs-s`. The
+    merge still starts with the word "merge".
+  - 1px `--line` dividers separate the rows and separate the tree from the code. No glow.
+- Read: `design/base.html`, `design/a-repo.html`, `design/style.css`, `design/repo.css`
+- Write: `design/idea-2.html`, `design/idea-2.css`
+- Covers: R11, R12, R13 as changed, R14 as changed
+- Size: 1440 by 900
+- Done when:
+  1. Is "Repository" the chosen tab, with the repository filling the output pane on the right?
+  2. Does the tab row end, at its right, with a control showing `fable/api-routes` and "▾"?
+  3. Is a menu open under that control listing all five branches with their agents, with only
+     `fable/api-routes` marked as chosen, floating over the code without pushing it down?
+  4. Is the control a `<details>` element, so it opens and closes without script?
+  5. Are the file tree, the code and five one-line commits visible, with the merge marked?
+  6. Is all text readable, with nothing cut off or wrapped, and nothing overlapping other
+     than the menu over the code?
+  7. Are the side column and `#chat` identical to those in `base.html`, and does the page fit
+     1440 by 900 with no scrollbar?
+  8. Is `idea-2.css` free of directly written colors, font families and font sizes, are
+     `style.css` and `repo.css` unchanged, and is the page free of `<script>` and images?
+
+### S14: Idea 3, branches as the live list
+- Do: Create `design/idea-3.html` as a copy of `design/base.html` with the repository open in
+  the output pane, and `design/idea-3.css` holding the rules this idea needs. The page links
+  `style.css`, then `repo.css`, then `idea-3.css`. Do not change `style.css` or `repo.css`.
+  - Tabs: "Repository" has `is-chosen` and goes to `idea-3.html`. "api-design.md" is not
+    chosen and goes to `base.html`. Remove the "is editing" line and the doc.
+  - Below the tabs put `<div class="r3">` filling the rest of the pane, in two rows. There is
+    no separate commit list in this idea.
+  - Row 1 fills the spare height: the `repo-tree` part, 190px wide, at the left, and the
+    `repo-code` part beside it, both copied from `design/a-repo.html` with the same classes
+    and content.
+  - Row 2, `r3-branches`, across the full width, as tall as its content: a label "Branches"
+    at `--fs-s` in `--text-3`, then one row per branch, most recent first. Each row is an
+    `<a class="r3-row">` on one line with five parts in fixed columns so the rows line up: a
+    state dot; the branch name in `--mono` at `--fs-s`; the agent's name at `--fs-s` in
+    `--text-2`; the branch's latest commit message at `--fs-m`, taking the spare width and
+    ending in "…" if it does not fit; and the time at `--fs-s` in `--text-3` at the right.
+  - The rows: working dot, `fable/api-routes`, Fable 5.2, "Add users route handlers", just
+    now. No dot, `main`, no agent, "Merge deepseek/auth into main" preceded by the word
+    "merge" at `--fs-s` in `--text-3`, 4m. Waiting dot, `deepseek/auth`, Deep Seek, "Add
+    session middleware", 9m. Working dot, `glm/web-client`, GLM, "Scaffold web client shell",
+    21m. Idle dot, `kimi/cli`, Kimi, "Add command parser", 2h.
+  - Use the existing `.dot` classes for the dots. The row for `fable/api-routes` has
+    `is-chosen`: a `--raised` background with `--radius-s` corners.
+  - 1px `--line` dividers separate the two rows and separate the tree from the code.
+- Read: `design/base.html`, `design/a-repo.html`, `design/style.css`, `design/repo.css`
+- Write: `design/idea-3.html`, `design/idea-3.css`
+- Covers: R11, R12, R13 as changed, R14 as changed
+- Size: 1440 by 900
+- Done when:
+  1. Is "Repository" the chosen tab, with the repository filling the output pane on the right?
+  2. Are the file tree and the code of `src/routes/users.ts` visible, with the code readable?
+  3. Is there a "Branches" list across the bottom with five rows in the order given, each
+     showing a branch, its agent, its latest commit message and a time, in aligned columns?
+  4. Do the dots match: working for `fable/api-routes` and `glm/web-client`, waiting for
+     `deepseek/auth`, idle for `kimi/cli`, none for `main`?
+  5. Is `fable/api-routes` the only row marked as chosen, and is there no separate commit list?
+  6. Is all text readable, with nothing cut off (other than a message ending in "…"),
+     overlapping or wrapped?
+  7. Are the side column and `#chat` identical to those in `base.html`, and does the page fit
+     1440 by 900 with no scrollbar?
+  8. Is `idea-3.css` free of directly written colors, font families and font sizes, are
+     `style.css` and `repo.css` unchanged, and is the page free of `<script>` and images?
+
+### S15: Red theme
+- Do: Create `design/red.css` and four red pages: `design/base-red.html`,
+  `design/idea-1-red.html`, `design/idea-2-red.html` and `design/idea-3-red.html`. Change no
+  other file.
+  - `red.css` has a `:root` block that redefines exactly the twelve named values in the "Red
+    theme" table, with exactly those values. This is the one place besides `style.css` where
+    colors are written directly.
+  - `red.css` also makes the small labels monospace capitals: the team label `.team`, the
+    phases title, the "in parallel" labels, the repository section labels such as "Files" and
+    "Commits", and the "Branches" label in idea 3. Find their class names in the files you
+    read. Each gets `--mono`, `--fs-s`, capitals, letter spacing of `0.12em`, and `--text-2`.
+  - `red.css` puts a solid `--accent` square, 6px by 6px, before the team label's text, on the
+    same line, with a small gap.
+  - `red.css` contains nothing else.
+  - Each red page is a copy of its purple page (`base.html` for `base-red.html`, and so on)
+    with exactly two kinds of change: one `<link rel="stylesheet" href="red.css">` added as
+    the last stylesheet link in the `<head>`; and every link to `base.html`, `idea-1.html`,
+    `idea-2.html` or `idea-3.html` pointed at the matching `-red` page.
+- Read: `docs/INSPIRATION.md` (the "Red theme" section only), `design/base.html`,
+  `design/idea-1.html`, `design/idea-2.html`, `design/idea-3.html`, `design/style.css`,
+  `design/repo.css`, `design/idea-1.css`, `design/idea-2.css`, `design/idea-3.css`
+- Write: `design/red.css`, `design/base-red.html`, `design/idea-1-red.html`,
+  `design/idea-2-red.html`, `design/idea-3-red.html`
+- Covers: R20 as changed, R28
+- Size: 1440 by 900, for each of the four red pages
+- Done when:
+  1. Does `red.css` redefine exactly the twelve named values from the "Red theme" table, with
+     exactly the table's values, and are those the only directly written colors in it?
+  2. Does each red page differ from its purple page only by the added `red.css` link and by
+     links pointing at `-red` pages?
+  3. On all four red pages, is red the only color, with no purple anywhere?
+  4. Are the corners of panes and cards nearly square on the red pages?
+  5. Does the team label read "John's Red Team" in monospace capitals with a small red square
+     before it, on one line, fully visible?
+  6. Are the other small labels in monospace capitals, each fully visible with nothing cut
+     off, overlapping or wrapped because of the wider lettering?
+  7. Does each red page fit 1440 by 900 with no scrollbar, with all five cards and all seven
+     phases visible?
+  8. Are the four purple pages and the other stylesheets unchanged, and are the red pages
+     free of `<script>` and images?
+
