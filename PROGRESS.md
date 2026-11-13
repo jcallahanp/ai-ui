@@ -30,7 +30,7 @@ Step statuses: `todo`, `doing`, `to verify`, `done`, `failed`.
 
 | Step | Status | Check result | Note |
 |---|---|---|---|
-| S01 Named values | todo | | |
+| S01 Named values | to verify |  |  |
 | S02 Page shell and agents pane | todo | | |
 | S03 Chat | todo | | |
 | S04 Output center | todo | | |
