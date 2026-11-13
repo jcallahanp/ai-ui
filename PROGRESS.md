@@ -4,12 +4,13 @@ The only record of where the project stands. Update it the moment something chan
 
 ## Now
 
-- **Phase:** 6, Build and verify (in progress)
-- **Next action:** Run the first step in the table below that is not `done`, in the order
-  `GOAL.md` gives. One Opus 5.5 agent does the step; a different one checks it.
-- **Blocked on:** nothing
-- **Still to come from the user:** the choice between layout A and layout B, once they have
-  seen both (R14).
+- **Phase:** 6, Build and verify (done). All ten steps passed an independent check.
+- **Next action:** The user compares `design/a-repo.html` (layout A) with `design/b-chat.html`
+  (layout B) and picks one (R14). Then record the choice in `docs/REQUIREMENTS.md` under
+  "Changes after agreement" and plan any follow-up steps in `GOAL.md`.
+- **Blocked on:** the user's choice between layout A and layout B.
+- **Not merged:** everything since the first commit is on `claude/festive-volta-u6qury`, not
+  `main`. The user has not asked for a merge.
 
 ## Phases
 
@@ -20,7 +21,7 @@ The only record of where the project stands. Update it the moment something chan
 | 3 | Personas | done | Written from the agreed requirements. Not shown to the user separately; they said to proceed |
 | 4 | Inspiration | done | Design direction final. It follows R19 to R22. Not shown to the user separately |
 | 5 | Plan | done | `GOAL.md` has ten steps, each with yes-or-no checks |
-| 6 | Build and verify | in progress | Every step below is `done` |
+| 6 | Build and verify | done | Every step below is `done` |
 
 Phase statuses: `not started`, `in progress`, `done`.
 
@@ -38,5 +39,5 @@ Step statuses: `todo`, `doing`, `to verify`, `done`, `failed`.
 | S06 Warp chosen | done | pass, 2026-11-13 |  |
 | S07 Empty output center | done | pass, 2026-11-13 |  |
 | S08 Repository view | done | pass, 2026-11-13 |  |
-| S09 Layout B | to verify |  |  |
+| S09 Layout B | done | pass, 2026-11-13 | The agent shrank commit text to 12px and tightened spacing to fit the 260px column. |
 | S10 Large monitor | done | pass, 2026-11-13 |  |

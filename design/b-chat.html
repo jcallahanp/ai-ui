@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>atlas</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="repo.css">
+  <style>
+    body {
+      grid-template-columns: 260px minmax(0, 1.1fr) minmax(0, 1fr) 280px;
+    }
+
+    #repo {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    #repo .repo-branches {
+      flex: none;
+      border-right: 0;
+    }
+
+    #repo .repo-tree {
+      flex: 1;
+      border-right: 0;
+    }
+
+    #repo .repo-commits {
+      flex: none;
+      gap: 6px;
+      padding: 12px var(--gap) var(--pad) var(--pad);
+    }
+
+    #repo .repo-commits .repo-label {
+      margin: 0 0 2px;
+    }
+
+    #repo .repo-commit-msg {
+      font-size: var(--fs-s);
+    }
+
+    #repo .repo-commit-meta {
+      gap: 6px;
+    }
+
+    #chat .msg code {
+      white-space: nowrap;
+    }
+
+    .tab-mono {
+      font-family: var(--mono);
+    }
+  </style>
+</head>
+<body>
+  <section id="repo" class="pane">
+    <div class="repo-branches">
+      <p class="repo-label">Branches</p>
+      <div class="repo-branch"><span class="repo-branch-name">main</span></div>
+      <div class="repo-branch is-chosen"><span class="repo-branch-name">fable/api-routes</span><span class="repo-branch-agent">Fable 5.2</span></div>
+      <div class="repo-branch"><span class="repo-branch-name">deepseek/auth</span><span class="repo-branch-agent">Deep Seek</span></div>
+      <div class="repo-branch"><span class="repo-branch-name">glm/web-client</span><span class="repo-branch-agent">GLM</span></div>
+      <div class="repo-branch"><span class="repo-branch-name">kimi/cli</span><span class="repo-branch-agent">Kimi</span></div>
+    </div>
+    <div class="repo-tree">
+      <p class="repo-label">Files</p>
+      <div class="repo-node repo-dir">src/</div>
+      <div class="repo-node repo-dir repo-in-1">routes/</div>
+      <div class="repo-node repo-file repo-in-2">index.ts</div>
+      <div class="repo-node repo-file repo-in-2">orders.ts</div>
+      <div class="repo-node repo-file repo-in-2 is-chosen">users.ts</div>
+      <div class="repo-node repo-dir repo-in-1">models/</div>
+      <div class="repo-node repo-dir repo-in-1">auth/</div>
+      <div class="repo-node repo-dir">docs/</div>
+      <div class="repo-node repo-dir">tests/</div>
+      <div class="repo-node repo-file">package.json</div>
+      <div class="repo-node repo-file">README.md</div>
+    </div>
+    <div class="repo-commits">
+      <p class="repo-label">Commits</p>
+      <div class="repo-commit">
+        <span class="repo-commit-msg">Add users route handlers</span>
+        <span class="repo-commit-meta"><span class="repo-commit-branch">fable/api-routes</span><span>Fable 5.2</span><span>just now</span></span>
+      </div>
+      <div class="repo-commit">
+        <span class="repo-commit-msg"><span class="repo-merge">merge</span>Merge deepseek/auth into main</span>
+        <span class="repo-commit-meta"><span class="repo-commit-branch">main</span><span>Deep Seek</span><span>4m</span></span>
+      </div>
+      <div class="repo-commit">
+        <span class="repo-commit-msg">Add session middleware</span>
+        <span class="repo-commit-meta"><span class="repo-commit-branch">deepseek/auth</span><span>Deep Seek</span><span>9m</span></span>
+      </div>
+      <div class="repo-commit">
+        <span class="repo-commit-msg">Scaffold web client shell</span>
+        <span class="repo-commit-meta"><span class="repo-commit-branch">glm/web-client</span><span>GLM</span><span>21m</span></span>
+      </div>
+      <div class="repo-commit">
+        <span class="repo-commit-msg">Add order model</span>
+        <span class="repo-commit-meta"><span class="repo-commit-branch">main</span><span>Fable 5.2</span><span>1h</span></span>
+      </div>
+    </div>
+  </section>
+  <section id="output" class="pane">
+    <nav class="tabs">
+      <a class="tab is-chosen" href="b-chat.html">api-design.md</a>
+      <a class="tab" href="#">schema diagram</a>
+      <a class="tab tab-mono" href="#">users.ts</a>
+    </nav>
+    <p class="editing"><span class="dot working"></span>Fable 5.2 is editing</p>
+    <div class="doc-scroll">
+      <article class="doc">
+        <h1>API design</h1>
+        <p>atlas is a small API service for users and their orders. This doc lists the routes, what each one is for and how errors come back, so the handlers and the clients agree on one shape.</p>
+        <h2>Routes</h2>
+        <table>
+          <thead>
+            <tr><th>Method</th><th>Path</th><th>Purpose</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="code">GET</td><td class="code">/users</td><td>List users, newest first</td></tr>
+            <tr><td class="code">GET</td><td class="code">/users/:id</td><td>Get one user by id</td></tr>
+            <tr><td class="code">POST</td><td class="code">/users</td><td>Create a user</td></tr>
+            <tr><td class="code">PATCH</td><td class="code">/users/:id</td><td>Update a user's name or email</td></tr>
+            <tr><td class="code">GET</td><td class="code">/orders?user_id=</td><td>List orders, filtered by user</td></tr>
+          </tbody>
+        </table>
+        <h2>Errors</h2>
+        <p>Every error returns a JSON body with a short code and a message a person can read. The HTTP status matches the code, so clients can check either one.</p>
+<pre>{
+  "error": {
+    "code": "user_not_found",
+    "message": "No user with id 42.",
+    "status": 404
+  }
+}</pre>
+      </article>
+    </div>
+  </section>
+  <section id="chat" class="pane">
+    <header class="chat-head">
+      <span class="chat-name">Fable 5.2</span>
+      <span class="agent-state"><span class="dot working"></span>working</span>
+    </header>
+    <div class="chat-log">
+      <div class="msg msg-op">Add the API routes for users and orders. Follow the plan in api-design.md.</div>
+      <div class="msg msg-agent">I'll start with users: list, get by id, create and update. Orders come next, and each order will point back to a user.</div>
+      <div class="msg msg-op">Should orders be nested under users, or their own route?</div>
+      <div class="msg msg-agent">Their own route, filtered by user. So <code>GET /orders?user_id=42</code> instead of <code>/users/42/orders</code>. It keeps the order routes simple and matches the data model.</div>
+      <div class="msg msg-agent">I've added both route groups to the design doc. Next I'll write the handlers for users, then orders.</div>
+      <p class="chat-note">Edited api-design.md</p>
+    </div>
+    <form class="chat-input">
+      <textarea rows="1" placeholder="Message Fable 5.2"></textarea>
+      <button type="button">Send</button>
+    </form>
+  </section>
+  <div class="side">
+    <section id="agents" class="pane">
+      <a class="agent is-chosen" href="a-chat.html">
+        <span class="agent-name">Fable 5.2</span>
+        <span class="agent-state"><span class="dot working"></span>working</span>
+      </a>
+      <a class="agent" href="a-warp.html">
+        <span class="agent-name">Warp</span>
+        <span class="agent-state"><span class="dot idle"></span>idle</span>
+      </a>
+      <a class="agent" href="#">
+        <span class="agent-name">Deep Seek</span>
+        <span class="agent-state"><span class="dot waiting"></span>waiting for you</span>
+      </a>
+      <a class="agent" href="#">
+        <span class="agent-name">GLM</span>
+        <span class="agent-state"><span class="dot working"></span>working</span>
+      </a>
+      <a class="agent" href="#">
+        <span class="agent-name">Kimi</span>
+        <span class="agent-state"><span class="dot idle"></span>idle</span>
+      </a>
+    </section>
+    <section id="phases" class="pane">
+      <h2 class="ph-title">Phases</h2>
+      <div class="ph-row">
+        <div class="ph-phase is-done">
+          <div class="ph-line"><span class="ph-name">Scaffold</span><span class="ph-count">4/4</span></div>
+          <div class="ph-track"><div class="ph-fill" style="width: 100%"></div></div>
+        </div>
+      </div>
+      <div class="ph-row">
+        <div class="ph-phase is-done">
+          <div class="ph-line"><span class="ph-name">Data model</span><span class="ph-count">6/6</span></div>
+          <div class="ph-track"><div class="ph-fill" style="width: 100%"></div></div>
+        </div>
+      </div>
+      <div class="ph-group">
+        <p class="ph-par">in parallel</p>
+        <div class="ph-row ph-pair">
+        <div class="ph-phase">
+          <div class="ph-line"><span class="ph-name">API routes</span><span class="ph-count">5/8</span></div>
+          <div class="ph-track"><div class="ph-fill" style="width: 62.5%"></div></div>
+        </div>
+        <div class="ph-phase">
+          <div class="ph-line"><span class="ph-name">Auth</span><span class="ph-count">2/6</span></div>
+          <div class="ph-track"><div class="ph-fill" style="width: 33.3333%"></div></div>
+        </div>
+        </div>
+      </div>
+      <div class="ph-group">
+        <p class="ph-par">in parallel</p>
+        <div class="ph-row ph-pair">
+        <div class="ph-phase">
+          <div class="ph-line"><span class="ph-name">Web client</span><span class="ph-count">1/9</span></div>
+          <div class="ph-track"><div class="ph-fill" style="width: 11.1111%"></div></div>
+        </div>
+        <div class="ph-phase">
+          <div class="ph-line"><span class="ph-name">CLI</span><span class="ph-count">0/5</span></div>
+          <div class="ph-track"><div class="ph-fill" style="width: 0%"></div></div>
+        </div>
+        </div>
+      </div>
+      <div class="ph-row">
+        <div class="ph-phase">
+          <div class="ph-line"><span class="ph-name">Tests and release</span><span class="ph-count">0/7</span></div>
+          <div class="ph-track"><div class="ph-fill" style="width: 0%"></div></div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
