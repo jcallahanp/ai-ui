@@ -18,8 +18,33 @@ they say in their own words. Mark anything you inferred as an inference.
 
 ## Summary
 
-Not written yet. A short account of the user's vision, in plain words. The interview is over
-when the user reads this and agrees with it.
+Written 2026-11-13 and shown to the user. The interview is over when the user agrees with it.
+
+The user runs five agents: Fable 5.2, Warp (their terminal), Deep Seek, GLM and Kimi. Today
+they lose time switching between tools to work with them. They want one dark, minimal
+dashboard where the terminal and the agents sit together and they can toggle between them
+without leaving. It is used mostly on a laptop and should also make good use of a large monitor.
+
+The dashboard has five parts:
+
+1. **Agents pane, on the right.** Five large cards, one per agent, each showing the agent's
+   name and a simple state. Clicking a card switches to that agent at once.
+2. **Chat, in the main area.** The chosen agent's chat, as smooth to use as a Claude Code web
+   session. For Warp it is a terminal.
+3. **Output center.** One area that stays open while the user switches agents. It shows what
+   the agents are producing, such as an artifact or a doc, and all the agents work on the same
+   output. The user watches it change and chooses whom to talk to.
+4. **Repository.** The active git repository, readable inside the dashboard: browse folders,
+   read code, and watch commits and merges arrive live. Who did what is secondary. To be
+   designed two ways for the user to choose: as one of the things the output center shows, and
+   as a separate column that is always on screen.
+5. **Phases pane.** The project broken into phases by an AI, showing which phases run in
+   parallel and how far along each is. One simple pane, not a kanban.
+
+The look: black or very dark, futuristic, minimalist and rogue, with glow used sparingly.
+Nothing crowded or over-engineered.
+
+Out of scope: functioning software, and issue tracking of the kind Paperclip does.
 
 **Agreed by the user:** no
 
@@ -39,6 +64,10 @@ From the user's 2026-11-13 answers. Their words where possible. Not yet agreed a
 - **Few, persistent agents:** there are only a handful and they are persistent, so their cards
   can be bigger, "more visually robust and neat as opposed to tiny text". Toggling between
   them must be swift.
+- **State on the card:** a card may show what its agent is doing (working, waiting for the
+  user, idle), on one condition from the user: "if it can be kept simple".
+- **Screen:** "A laptop mostly. But large monitor flexibility be nice." Design for a laptop
+  first. A large monitor should get a good layout too, not a stretched laptop one.
 
 - **What it is:** one neat, clean, minimalistic dashboard to manage five agents in one spot:
   Fable 5.2, Warp, Deep Seek, GLM and Kimi. No abstractions.
@@ -77,8 +106,6 @@ From the user's 2026-11-13 answers. Their words where possible. Not yet agreed a
   without it becoming crowded, which the user dislikes.
 - How progress on a phase is measured and shown: a count of steps done, a bar, or a state.
 - Whether a terminal agent (Warp) looks the same as a chat agent or different.
-- What an agent's card shows besides its name, for example whether it is working or idle.
-- Device and screen size.
 - The two heavy pins are kanban boards, but the user found a kanban too complex for the steps
   pane. Whether those pins now stand for their look only.
 
@@ -98,3 +125,5 @@ Add each exchange as it happens, newest last.
 | 2026-11-13 | None. The user added this unprompted. | "One thing that is easy about Claude Code is that agents can interact with artifacts, so I can tell different sessions to interact with the same artifact. I like that I can open it beside a chat and feel like I'm chatting about an artifact. What annoys me is that when I go to a different chat I have to reopen it. It would be cool if I could sort of see agents outputting things and they can collaborate on one output center (not just the git, like artifacts or a doc or something), but it stays fixed so that I basically can see agents interacting and changing it while I toggle through them. It's like the whole team is working on the output area, but I choose which team member I want to be clicked in, and I can switch without the output closing." |
 | 2026-11-13 | Is the repository one of the things the output center shows, or a separate column that is always on screen? | "Let's see both ideas in a UI. Separate would be cool but could be too much clutter." |
 | 2026-11-13 | For the steps pane, where do the steps come from and what do you want to see at a glance? | "Probably have an AI break it into phases. We want to see the phases and then which would run in parallel and how far they are." |
+| 2026-11-13 | What screen will you use this on? | "A laptop mostly. But large monitor flexibility be nice." |
+| 2026-11-13 | Should an agent's card show what the agent is doing (working, waiting for you, idle)? | "If it can be kept simple." |

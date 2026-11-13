@@ -6,8 +6,8 @@ The only record of where the project stands. Update it the moment something chan
 
 - **Phase:** 1, Interview (in progress)
 - **Next action:** Work through the open questions in `docs/INTERVIEW.md`, one or two at a time.
-  Asked and waiting on: what screen the dashboard is used on, and whether an agent's card
-  should show its state so the user knows who needs them without clicking.
+  Asked and waiting on: whether the user agrees with the summary in `docs/INTERVIEW.md`, and
+  the glow color and typeface. Once the summary is agreed, phase 1 is done and phase 2 starts.
 - **Blocked on:** nothing
 - **Done out of order:** the user shared their Pinterest board before the interview. Its 10
   unique pins, the user's weighting and what they like are in `docs/INSPIRATION.md`, with a
