@@ -32,7 +32,7 @@ Step statuses: `todo`, `doing`, `to verify`, `done`, `failed`.
 |---|---|---|---|
 | S01 Named values | done | pass, 2026-11-13 |  |
 | S02 Page shell and agents pane | done | pass, 2026-11-13 |  |
-| S03 Chat | failed | fail, 2026-11-13 | Left design/shots/S03-chat.png in the repository. All six checks passed. Given to a new agent to remove the file. |
+| S03 Chat | to verify |  |  |
 | S04 Output center | todo | | |
 | S05 Phases pane | todo | | |
 | S06 Warp chosen | todo | | |
