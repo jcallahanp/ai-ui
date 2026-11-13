@@ -1,0 +1,42 @@
+/* Red theme. Loaded after every other stylesheet. */
+
+:root {
+  --bg: #040404;
+  --pane: #0a0a0a;
+  --raised: #131313;
+  --line: #222222;
+  --text: #ededed;
+  --text-2: #9b9b9b;
+  --text-3: #6c6c6c;
+  --accent: #dc2f3c;
+  --accent-soft: rgba(220, 47, 60, 0.14);
+  --glow: 0 0 22px rgba(220, 47, 60, 0.3);
+  --radius: 4px;
+  --radius-s: 2px;
+}
+
+/* Small labels: monospace capitals, widely spaced. */
+
+.team,
+.ph-title,
+.ph-par,
+.repo-label,
+.r3-label {
+  font-family: var(--mono);
+  font-size: var(--fs-s);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-2);
+}
+
+/* Solid red square before the team label. */
+
+.team::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: var(--gap);
+  background: var(--accent);
+  vertical-align: middle;
+}

@@ -4,16 +4,14 @@ The only record of where the project stands. Update it the moment something chan
 
 ## Now
 
-- **Phase:** 6, Build and verify. Round 2 in progress.
-- **Why a round 2:** on 2026-11-13 the user saw the six round 1 pages and asked for changes:
-  agents on the left, one pane that holds either an output or the repository, a few ideas for
-  switching branches without a column, a red theme beside the purple one for every option, and
-  a "John's Red Team" label. Recorded in `docs/REQUIREMENTS.md` under "Changes after agreement".
-- **Next action:** Run the first step from S11 on that is not `done`, in the order `GOAL.md`
-  gives. One Opus 5.5 agent does the step; a different one checks it.
-- **Blocked on:** nothing
-- **Still to come from the user:** which idea and which theme. Then the Warp, empty and
-  large-monitor pages are redone in that style, and the round 1 pages are removed.
+- **Phase:** 6, Build and verify. Round 2 is done: S11 to S15 all passed an independent check.
+- **Next action:** The user picks one branch idea (`design/idea-1.html`, `idea-2.html` or
+  `idea-3.html`) and one theme (purple, or the `-red` pages), and says whether the "John's Red
+  Team" label is in the right place. Record the choice in `docs/REQUIREMENTS.md` under "Changes
+  after agreement". Then plan round 3 in `GOAL.md`: redo the Warp, empty and large-monitor
+  pages in the chosen style and remove the pages that were not chosen, including the six
+  round 1 pages (`a-*.html`, `b-chat.html`, `wide.html`).
+- **Blocked on:** the user's choice of idea and theme.
 - **Not merged:** everything since the first commit is on `claude/festive-volta-u6qury`, not
   `main`. The user has not asked for a merge.
 
@@ -26,7 +24,7 @@ The only record of where the project stands. Update it the moment something chan
 | 3 | Personas | done | Written from the agreed requirements. Not shown to the user separately; they said to proceed |
 | 4 | Inspiration | done | Design direction final. It follows R19 to R22. Not shown to the user separately |
 | 5 | Plan | done | `GOAL.md` has ten steps, each with yes-or-no checks |
-| 6 | Build and verify | in progress | Every step below is `done` |
+| 6 | Build and verify | in progress | Round 2 done. Round 3 follows the user's choice |
 
 Phase statuses: `not started`, `in progress`, `done`.
 
@@ -50,4 +48,4 @@ Step statuses: `todo`, `doing`, `to verify`, `done`, `failed`.
 | S12 Idea 1, branch chips | done | pass, 2026-11-13 |  |
 | S13 Idea 2, branch switcher in the tab row | done | pass, 2026-11-13 |  |
 | S14 Idea 3, branches as the live list | done | pass, 2026-11-13 |  |
-| S15 Red theme | to verify |  |  |
+| S15 Red theme | done | pass, 2026-11-13 | Checker's note: in red, PHASES is bolder than IN PARALLEL, and pane titles such as the chat header are not restyled. |
