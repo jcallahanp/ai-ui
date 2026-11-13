@@ -39,4 +39,4 @@ Step statuses: `todo`, `doing`, `to verify`, `done`, `failed`.
 | S07 Empty output center | done | pass, 2026-11-13 |  |
 | S08 Repository view | done | pass, 2026-11-13 |  |
 | S09 Layout B | doing |  |  |
-| S10 Large monitor | doing |  |  |
+| S10 Large monitor | to verify |  |  |
