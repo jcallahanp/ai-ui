@@ -6,8 +6,8 @@ The only record of where the project stands. Update it the moment something chan
 
 - **Phase:** 1, Interview (in progress)
 - **Next action:** Work through the open questions in `docs/INTERVIEW.md`, one or two at a time.
-  Asked and waiting on: whether there are four agents or five, and what the git column shows
-  when the user clicks into a folder.
+  Asked and waiting on: whether the repository view lives inside the shared output center,
+  and where the steps come from and what the user wants to see about them at a glance.
 - **Blocked on:** nothing
 - **Done out of order:** the user shared their Pinterest board before the interview. Its 10
   unique pins, the user's weighting and what they like are in `docs/INSPIRATION.md`, with a
